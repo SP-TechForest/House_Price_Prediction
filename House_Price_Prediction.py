@@ -40,7 +40,10 @@ vell = st.button("Get Price")
 if vell == True:
     val = model_predict_function(area_name, sqft, br, bal,bhk)
     val = int(val)
-    st.write("Expected price of you house, on the bases of your preferences is: ", val)
+    if val > 0:
+        st.write("Expected price of you house, on the bases of your preferences is: ", val)
+    else:
+        st.write("Sorry, You entered something wrong, Check your Choices")
 print(feature)
 
 
